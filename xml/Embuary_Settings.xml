@@ -107,7 +107,7 @@
 			</item>
 			<item>
 				<label>$LOCALIZE[31108]</label>
-				<label2>&#xfb4c;</label2>
+				<label2>&#xf21a;</label2>
 				<onclick>ActivateWindow(eventlog)</onclick>
 			</item>
 		</content>
