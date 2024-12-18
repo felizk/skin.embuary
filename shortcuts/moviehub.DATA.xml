@@ -52,7 +52,7 @@
 		<icon/>
 		<thumb/>
 		<action>embycon_movies</action>
-		<visible>System.HasAddon(plugin.video.embycon)</visible>
+		<visible>System.HasAddon(plugin.video.jellykoda)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>embuary_moviehub_library</defaultID>

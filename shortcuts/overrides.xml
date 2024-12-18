@@ -14,12 +14,12 @@
 
 	<!-- action overrides -->
 	<override action="embycon_movies">
-		<condition>String.IsEqual(Window(home).property(plugin.video.embycon-group_movies),true)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=movies&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fIsVirtualUnaired%3dfalse%26IncludeItemTypes%3dMovie%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).property(plugin.video.jellykoda-group_movies),true)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=movie&amp;mode=GET_CONTENT&amp;group_movies=true,return)</action>
 	</override>
 	<override action="embycon_movies">
-		<condition>!String.IsEqual(Window(home).property(plugin.video.embycon-group_movies),true)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=movies&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMovie%26IsVirtualUnaired%3dfalse%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26format%3djson,return)</action>
+		<condition>!String.IsEqual(Window(home).property(plugin.video.jellykoda-group_movies),true)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=movie&amp;mode=GET_CONTENT,return)</action>
 	</override>
 
 	<override action="library_update">
@@ -203,274 +203,274 @@
 	</override>
 	<!-- embycon overrides -->
 	<override action="embycon0">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.0.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.0.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,0,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon0">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.0.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.0.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.0.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.0.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon1">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.1.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.1.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,1,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon1">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.1.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.1.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.1.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.1.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon2">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.2.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.2.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,2,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon2">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.2.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.2.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.2.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.2.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon3">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.3.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.3.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,3,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon3">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.3.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.3.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.3.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.3.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon4">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.4.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.4.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,4,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon4">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.4.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.4.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.4.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.4.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon5">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.5.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.5.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,5,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon5">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.5.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.5.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.5.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.5.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon6">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.6.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.6.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,6,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon6">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.6.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.6.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.6.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.6.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon7">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.7.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.7.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,7,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon7">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.7.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.7.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.7.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.7.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon8">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.8.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.8.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,8,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon8">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.8.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.8.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.8.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.8.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon9">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.9.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.9.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,9,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon9">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.9.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.9.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.9.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.9.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon10">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.10.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.10.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,10,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon10">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.10.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.10.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.10.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.10.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon11">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.11.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.11.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,11,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon11">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.11.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.11.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.11.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.11.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon12">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.12.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.12.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,12,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon12">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.12.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.12.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.12.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.12.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon13">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.13.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.13.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,13,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon13">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.13.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.13.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.13.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.13.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon14">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.14.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.14.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,14,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon14">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.14.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.14.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.14.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.14.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon15">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.15.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.15.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,15,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon15">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.15.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.15.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.15.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.15.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon16">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.16.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.16.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,16,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon16">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.16.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.16.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.16.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.16.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon17">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.17.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.17.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,17,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon17">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.17.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.17.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.17.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.17.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon18">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.18.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.18.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,18,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon18">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.18.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.18.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.18.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.18.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon19">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.19.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.19.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,19,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon19">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.19.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.19.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.19.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.19.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon20">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.20.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.20.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,20,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon20">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.20.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.20.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.20.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.20.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon21">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.21.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.21.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,21,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon21">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.21.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.21.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.21.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.21.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon22">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.22.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.22.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,22,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon22">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.22.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.22.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.22.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.22.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon23">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.23.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.23.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,23,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon23">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.23.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.23.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.23.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.23.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon24">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.24.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.24.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,24,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon24">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.24.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.24.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.24.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.24.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon25">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.25.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.25.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,25,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon25">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.25.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.25.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.25.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.25.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon26">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.26.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.26.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,26,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon26">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.26.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.26.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.26.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.26.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon27">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.27.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.27.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,27,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon27">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.27.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.27.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.27.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.27.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon28">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.28.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.28.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,28,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon28">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.28.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.28.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.28.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.28.id)]&amp;,return)</action>
 	</override>
 	<override action="embycon29">
-		<condition>!String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.29.type),boxsets)</condition>
+		<condition>!String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.29.type),boxsets)</condition>
 		<action>SetProperty(TagHubNr,29,home)</action>
 		<action>ActivateWindow(1131)</action>
 	</override>
 	<override action="embycon29">
-		<condition>String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.29.type),boxsets)</condition>
-		<action>ActivateWindow(videos,plugin://plugin.video.embycon/?media_type=boxsets&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fParentId%3d$INFO[Window(home).Property(plugin.video.embycon-view_item.29.id)]&amp;%26IsVirtualUnaired%3dfalse%26IncludeItemTypes%3dBoxset%26CollapseBoxSetItems%3dTrue%26GroupItemsIntoCollections%3dTrue%26Recursive%3dtrue%26IsMissing%3dFalse%26Fields%3d%7bfield_filters%7d%26ImageTypeLimit%3d1%26SortBy%3dName%26SortOrder%3dAscending%26format%3djson,return)</action>
+		<condition>String.IsEqual(Window(home).Property(plugin.video.jellykoda-view_item.29.type),boxsets)</condition>
+		<action>ActivateWindow(videos,plugin://plugin.video.jellykoda/?media_type=boxsets&amp;mode=GET_CONTENT&amp;library=$INFO[Window(home).Property(plugin.video.jellykoda-view_item.29.id)]&amp;,return)</action>
 	</override>
 
 	<!-- sidepanel -->
